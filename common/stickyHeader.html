@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body>
 
+</head>
+<style>
+    #sticky_backGround{
+        background-color: #87bd43;
+        height: 100px;
+        vertical-align: middle;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="sticky_backGround">
+        <img id="stickyImage" alt="phone" src="../image/1/3.png">
+        <div>전화문의 1666-6804</div>
+    </div>
 </body>
+<script>
+    window.onload = () => {
+        let fullWidth = window.screen.width;
+        let sticky = document.getElementById('sticky_backGround');
+        let stickyImage = document.getElementById('stickyImage');
+        sticky.style.width = fullWidth + 'px';
+        stickyImage.style.top = sticky.style.height/2 + 'px'
+        console.log(sticky.style.height/2 + 'px')
+        // sticky.style.width = fullWidth + 'px';
+    }
+</script>
 </html>

@@ -12,16 +12,30 @@
         position: absolute;
         clear: left;
         float: left;
-        width: 100%;
         left: 0;
         bottom: 0;
+    }
+    body{
+        padding:0;
+        margin:0;
+        overflow-x: hidden;
+    }
+    .tightElm{
+        margin:0 0 ;
+        padding: 0 0 ;
+        width : 50px;
     }
 </style>
 <body>
     <header id="header"></header>
 
     <div id="body">
+        <div id="img2Div">
+            <img src="../image/1/2.png" id="image2" alt="members">
+        </div>
+        <div id="stickyHeader" class="tightElm">
 
+        </div>
     </div>
 
     <footer id="footer"></footer>
@@ -29,8 +43,19 @@
 </body>
 <script>
     window.onload = ()=>{
+        let stickyHeader = $("#stickyHeader");
+        let image2 = document.getElementById('image2');
+        let fullWidth = window.screen.width;
+
+        image2.style.width = fullWidth + 'px';
+
         $("#header").load("../common/header.html")
         $("#footer").load("../common/footer.html")
+
+        stickyHeader.load('../common/stickyHeader.html')
+        stickyHeader.width(fullWidth + 'px');
+
+        document.getElementById('img2Div').style.height = image2.height + 'px';
     }
 </script>
 </html>
